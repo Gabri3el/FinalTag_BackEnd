@@ -40,6 +40,5 @@ module.exports = app =>{
     app.route('/categories/:id/articles')
         .get(app.api.article.getByCategory)
 
-    app.route('/stats')
-        .get(app.api.stats.get)
+
 }
