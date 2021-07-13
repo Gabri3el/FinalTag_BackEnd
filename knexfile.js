@@ -1,7 +1,5 @@
 const {DATABASE_URL} = require('./.env');
 
-
-
 module.exports = {
       client: 'postgresql',
       connection: DATABASE_URL,
