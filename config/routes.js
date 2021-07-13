@@ -7,14 +7,14 @@ module.exports = app =>{
 
     app.route('/users')
         .all(app.config.passport.authenticate())
-        .post(admin(app.api.user.save))
-        .get(admin(app.api.user.get))
+        .post(app.api.user.save)
+        .get(app.api.user.get)
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate())
-        .put(admin(app.api.user.save))
-        .get((app.api.user.getById))
-        .delete(admin(app.api.user.delete))
+        .put(app.api.user.save)
+        .get(app.api.user.getById)
+        .delete(app.api.user.delete)
     
     app.route('/categories')
         .get(app.api.category.get)
@@ -26,17 +26,17 @@ module.exports = app =>{
     // rotas especificas devem ficar em cima; 
     app.route('/categories/:id')
         .get(app.api.category.getById)
-        .put(admin(app.api.category.save))
-        .delete(admin(app.api.category.remove))
+        .put(app.api.category.save)
+        .delete(app.api.category.remove)
 
     app.route('/articles')
         .get(app.api.article.get)
-        .post(admin(app.api.article.save))
+        .post(app.api.article.save)
 
     app.route('/articles/:id')
         .get(app.api.article.getById)
-        .put(admin(app.api.article.save))
-        .delete(admin(app.api.article.remove))
+        .put(app.api.article.save)
+        .delete(app.api.article.remove)
     app.route('/categories/:id/articles')
         .get(app.api.article.getByCategory)
 
