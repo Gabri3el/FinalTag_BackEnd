@@ -1,8 +1,7 @@
-const {db} = require('./.env')
-
+const {DATABASE_URL} = require('./.env')
 module.exports = {
       client: 'postgresql',
-      connection: db,
+      connection: DATABASE_URL,
       pool: {
         min: 2,
         max: 10,
