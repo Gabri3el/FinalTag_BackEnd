@@ -6,7 +6,10 @@ module.exports = {
       pool: {
         min: 2,
         max: 10,
-        propagateCreateError: false
+        propagateCreateError: false, 
+        idleTimeoutMillis: 10000, 
+        createTimeoutMillis: 10000, 
+        acquireTimeoutMillis: 10000
       },
       migrations: {
         tableName: 'knex_migrations'
