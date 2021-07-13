@@ -18,7 +18,7 @@ module.exports = app =>{
     
     app.route('/categories')
         .get(app.api.category.get)
-        .post(admin(app.api.category.save))
+        .post(app.api.category.save)
 
     app.route('/categories/tree')
         .get(app.api.category.getTree)
