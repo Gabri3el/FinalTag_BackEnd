@@ -2,10 +2,12 @@ const app = require('express')()
 const consign = require('consign')
 const db = require('./config/db.js')
 const mongoose = require('mongoose')
+const dotenv = require ('dotenv')
 require('./config/mongoDb')   
 
 app.db = db
 app.mongoose = mongoose
+dotenv.config({path: './.env'})
 
 consign()
 .include('./config/passport.js')
