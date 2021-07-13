@@ -30,7 +30,7 @@ module.exports = app => {
 
         res.json({
             ...payload,
-            token: jwt.encode(payload, process.env.AuthSecret)
+            token: jwt.encode(payload, 'SDASDDASD555uASADSsd')
         })
     }
 
