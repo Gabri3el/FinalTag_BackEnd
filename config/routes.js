@@ -6,14 +6,15 @@ module.exports = app =>{
     app.post('/validateToken', app.api.auth.validateToken)
 
     app.route('/users')
-        .post(app.api.user.save)
-        .get(app.api.user.get)
+        .all(app.config.passport.authenticate())
+        .post(admin(app.api.user.save))
+        .get(admin(app.api.user.get))
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate())
-        .put(app.api.user.save)
-        .get(app.api.user.getById)
-        .delete(app.api.user.delete)
+        .put(admin(app.api.user.save))
+        .get((app.api.user.getById))
+        .delete(admin(app.api.user.delete))
     
     app.route('/categories')
         .get(app.api.category.get)
