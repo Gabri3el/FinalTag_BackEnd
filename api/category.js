@@ -20,7 +20,7 @@ module.exports = app =>{
             app.db('categories')
                 .insert(category)
                 .then(_ => res.status(204).send())
-                .catch(err => res.status(500).send(err))
+                .catch(err => res.status(500).send('erro na categoria'))
         }
     }
     const remove = async(req,res) => {
